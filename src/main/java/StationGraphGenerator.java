@@ -61,7 +61,10 @@ public class StationGraphGenerator {
     public Map<String, List<Integer>> getLineMap() {
         Map<String, List<Integer>> map = new HashMap<>();
         for (Map.Entry<String,List<Station>> entry : lineToStations.entrySet()) {
-            List<Integer> ids = entry.getValue().stream().map(Station::getObjectId).collect(Collectors.toList());
+            List<Integer> ids = entry.getValue().stream()
+                    .map(Station::getObjectId)
+                    .distinct()
+                    .collect(Collectors.toList());
             map.put(entry.getKey(), ids);
         }
         return map;
