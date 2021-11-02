@@ -1,3 +1,5 @@
+package schwimmer.subway;
+
 public class Coordinates {
     private final double lat;
     private final double lon;

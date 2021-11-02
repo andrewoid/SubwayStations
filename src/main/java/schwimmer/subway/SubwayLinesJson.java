@@ -1,3 +1,5 @@
+package schwimmer.subway;
+
 import java.util.HashMap;
 import java.util.List;
 

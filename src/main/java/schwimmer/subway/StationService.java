@@ -1,3 +1,5 @@
+package schwimmer.subway;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -8,6 +10,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+/**
+ * Reads SubwayStations.json and SubwayLines.json and returns a Map which
+ * contains all the connected Stations.
+ */
 public class StationService {
 
     public Map<Integer, Station> stations() throws IOException {

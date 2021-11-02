@@ -1,3 +1,5 @@
+package schwimmer.subway;
+
 import java.util.*;
 
 import static java.lang.Math.min;
@@ -11,7 +13,7 @@ public class ShortestPath {
     }
 
     /**
-     * Finds the closest Station to the coordinates lat, lon
+     * Finds the closest schwimmer.subway.Station to the coordinates lat, lon
      * @param lat
      * @param lon
      * @return

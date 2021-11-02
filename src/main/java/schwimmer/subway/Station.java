@@ -1,5 +1,6 @@
+package schwimmer.subway;
+
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 
 public class Station {
@@ -11,8 +12,6 @@ public class Station {
 
     private final List<Station> connections;
     private int distance;
-
-    private Station toStart;
 
     public Station(int objectId, String name, List<String> lines, Coordinates coords) {
         this.objectId = objectId;
@@ -53,10 +52,10 @@ public class Station {
 
     @Override
     public String toString() {
-        return "Station{" +
+        return "schwimmer.subway.Station{" +
                 "objectId='" + objectId + '\'' +
                 ", name='" + name + '\'' +
-                ", lines=" + lines +
+                ", schwimmer.subway.lines=" + lines +
                 ", coords=" + coords +
                 '}';
     }
@@ -67,13 +66,5 @@ public class Station {
 
     public void setDistance(int distance) {
         this.distance = distance;
-    }
-
-    public Station getToStart() {
-        return toStart;
-    }
-
-    public void setToStart(Station toStart) {
-        this.toStart = toStart;
     }
 }

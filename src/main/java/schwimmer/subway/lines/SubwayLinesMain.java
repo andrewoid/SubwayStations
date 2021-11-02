@@ -1,5 +1,8 @@
+package schwimmer.subway.lines;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import schwimmer.subway.SubwayStationsJson;
 
 import java.io.*;
 

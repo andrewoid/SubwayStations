@@ -1,10 +1,17 @@
-import java.sql.Array;
+package schwimmer.subway.lines;
+
+import schwimmer.subway.Station;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+/**
+ * This class creates SubwayLines.json
+ * This is not used for
+ */
 public class StationGraphGenerator {
 
     Map<String, List<Station>> lineToStations = new HashMap<>();
