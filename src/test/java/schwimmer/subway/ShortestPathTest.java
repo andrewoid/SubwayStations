@@ -54,4 +54,23 @@ class ShortestPathTest {
         assertEquals(stations.get(327), path.get(3));
         assertEquals(b, path.get(path.size()-1));
     }
+
+    @Test
+    public void findByCoordinates() throws IOException {
+        StationService service = new StationService();
+        Map<Integer, Station> stations = service.stations();
+        ShortestPath shortestPath = new ShortestPath(stations);
+        // Stillwell Ave
+        Station stillwell = stations.get(469);
+        Coordinates coords = stillwell.getCoords();
+
+        // when
+        Station station  = shortestPath.findByCoordinates(
+                coords.getLat(),
+                coords.getLon());
+
+        // then
+        assertEquals(stillwell, station);
+    }
+
 }
