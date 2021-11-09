@@ -21,7 +21,7 @@ public class StationService {
         Gson gson = new GsonBuilder()
                 .setPrettyPrinting()
                 .create();
-        InputStream in = ClassLoader.getSystemResourceAsStream("SubwayStations.json");
+        InputStream in = getClass().getClassLoader().getResourceAsStream("SubwayStations.json");
         InputStreamReader reader = new InputStreamReader(in);
         SubwayStationsJson subwayStationsJson = gson.fromJson(reader, SubwayStationsJson.class);
         reader.close();
@@ -29,7 +29,7 @@ public class StationService {
         Map<Integer, Station> stations = subwayStationsJson.toStations()
                 .stream()
                 .collect(Collectors.toMap(Station::getObjectId, station -> station));
-        in = ClassLoader.getSystemResourceAsStream("SubwayLines.json");
+        in = getClass().getClassLoader().getResourceAsStream("SubwayLines.json");
         reader = new InputStreamReader(in);
         SubwayLinesJson subwayLinesJson = gson.fromJson(reader, SubwayLinesJson.class);
 

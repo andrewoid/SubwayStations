@@ -19,8 +19,9 @@ public class SubwayStationsJson {
                     properties.name,
                     Arrays.asList(properties.line.split("-")),
                     new Coordinates(
-                            geometry.coordinates[0],
-                            geometry.coordinates[1])
+                            // this is reversed
+                            geometry.coordinates[1],
+                            geometry.coordinates[0])
             );
         }
 

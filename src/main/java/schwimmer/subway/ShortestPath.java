@@ -2,8 +2,6 @@ package schwimmer.subway;
 
 import java.util.*;
 
-import static java.lang.Math.min;
-
 public class ShortestPath {
 
     private Map<Integer, Station> stations;
@@ -18,7 +16,7 @@ public class ShortestPath {
      * @param lon
      * @return
      */
-    public Station findByCoordinates(long lat, long lon) {
+    public Station findByCoordinates(double lat, double lon) {
         Coordinates c = new Coordinates(lat, lon);
 
         Station closest = null;
@@ -26,7 +24,7 @@ public class ShortestPath {
         for (Station s : stations.values()) {
             double distance = s.getCoords().distance(c);
             if (distance < minDistance) {
-                minDistance = s.getCoords().distance(c);
+                minDistance = distance;
                 closest = s;
             }
         }

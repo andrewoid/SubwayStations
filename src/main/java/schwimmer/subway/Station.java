@@ -1,5 +1,6 @@
 package schwimmer.subway;
 
+import java.beans.Transient;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +11,7 @@ public class Station {
     private final Coordinates coords;
     private final List<String> lines;
 
-    private final List<Station> connections;
+    private transient final List<Station> connections;
     private int distance;
 
     public Station(int objectId, String name, List<String> lines, Coordinates coords) {
@@ -55,7 +56,7 @@ public class Station {
         return "schwimmer.subway.Station{" +
                 "objectId='" + objectId + '\'' +
                 ", name='" + name + '\'' +
-                ", schwimmer.subway.lines=" + lines +
+                ", lines=" + lines +
                 ", coords=" + coords +
                 '}';
     }
