@@ -6,6 +6,10 @@ plugins {
 group 'org.example'
 version '1.0-SNAPSHOT'
 
+// Elastic Beanstalk requires a lower version of Java
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
 repositories {
     mavenCentral()
 }

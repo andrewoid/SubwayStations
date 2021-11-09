@@ -60,17 +60,33 @@ class ShortestPathTest {
         StationService service = new StationService();
         Map<Integer, Station> stations = service.stations();
         ShortestPath shortestPath = new ShortestPath(stations);
-        // Stillwell Ave
-        Station stillwell = stations.get(469);
-        Coordinates coords = stillwell.getCoords();
+        // 59th St
+        Station expected = stations.get(353);
 
         // when
-        Station station  = shortestPath.findByCoordinates(
-                coords.getLat(),
-                coords.getLon());
+        Station actual  = shortestPath.findByCoordinates(
+                expected.getCoords().getLat(),
+                expected.getCoords().getLon());
 
         // then
-        assertEquals(stillwell, station);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void distance() throws IOException {
+        StationService service = new StationService();
+        Map<Integer, Station> stations = service.stations();
+        ShortestPath shortestPath = new ShortestPath(stations);
+        Station columbusCircle = stations.get(353);
+        Station lincolnCenter = stations.get(88);
+        Coordinates coordinates = new Coordinates(40.7694134,-73.9851112);
+
+        // when
+        double distance1 = columbusCircle.getCoords().distance(coordinates);
+        double distance2 = lincolnCenter.getCoords().distance(coordinates);
+
+        // then
+        assertTrue(distance1 < distance2);
     }
 
 }

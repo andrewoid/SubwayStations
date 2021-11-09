@@ -23,8 +23,8 @@ class PathServletTest {
         doReturn(out).when(response).getWriter();
         doReturn("40.5876923").when(request).getParameter("lat1");
         doReturn("-73.9543462").when(request).getParameter("lon1");
-        doReturn("40.7701288").when(request).getParameter("lat2");
-        doReturn("-73.9946557").when(request).getParameter("lon2");
+        doReturn("40.768249531776064").when(request).getParameter("lat2");
+        doReturn("-73.98164872301398").when(request).getParameter("lon2");
 
         // when
         servlet.doGet(request, response);
